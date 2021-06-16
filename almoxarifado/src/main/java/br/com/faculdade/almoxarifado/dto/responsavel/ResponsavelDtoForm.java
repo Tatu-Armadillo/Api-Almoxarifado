@@ -44,6 +44,5 @@ public class ResponsavelDtoForm {
         responsavel.setNomeResponsavel(this.nomeResponsavel);
         responsavel.setNumeroContato(this.numeroContato);
         return responsavel;
-
     }}
 }

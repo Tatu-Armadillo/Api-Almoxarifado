@@ -4,16 +4,14 @@ import java.util.Date;
 
 import org.springframework.data.domain.Page;
 
-import br.com.faculdade.almoxarifado.model.Item;
 import br.com.faculdade.almoxarifado.model.Movimentos;
-import br.com.faculdade.almoxarifado.model.Responsavel;
 
 public class MovimentosDto {
 
     private Date data;
     private boolean entradaSaida;
-    private Item item;
-    private Responsavel responsavel;
+    private String item;
+    private String responsavel;
 
     public MovimentosDto(Movimentos movimento) {
         this.data = movimento.getData();
@@ -30,19 +28,19 @@ public class MovimentosDto {
         this.data = data;
     }
 
-    public Responsavel getResponsavel() {
+    public String getResponsavel() {
         return responsavel;
     }
 
-    public void setResponsavel(Responsavel responsavel) {
+    public void setResponsavel(String responsavel) {
         this.responsavel = responsavel;
     }
 
-    public Item getNomeItem() {
+    public String getNomeItem() {
         return item;
     }
 
-    public void setNomeItem(Item nomeItem) {
+    public void setNomeItem(String nomeItem) {
         this.item = nomeItem;
     }
 

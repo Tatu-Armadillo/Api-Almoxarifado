@@ -18,30 +18,30 @@ public class Movimentos {
     @Column(name = "Entrada_Saida")
     private boolean entradaSaida;
 
-    @ManyToOne
-    @JoinColumn(name = "tb_itens", referencedColumnName = "id_item")
-    private Item item;
+    // @ManyToOne
+    // @JoinColumn(name = "tb_itens", foreignKey = @ForeignKey(name = "fk_Itens_id_item"))
+    private String item;
 
-    @ManyToOne
-    @JoinColumn(name = "id_adm", foreignKey = @ForeignKey(name = "fk_Usuarios_id_adm"))
-    private Usuario usuario;
+    // @ManyToOne
+    // @JoinColumn(name = "id_adm", foreignKey = @ForeignKey(name =
+    // "fk_Usuarios_id_adm"))
+    private String usuario;
 
-    @ManyToOne
-    @JoinColumn(name = "id_responsavel", foreignKey = @ForeignKey(name = "fk_Responsaveis_id_responsavel"))
-    private Responsavel responsavel;
+    // @ManyToOne
+    // @JoinColumn(name = "id_responsavel", foreignKey = @ForeignKey(name = "fk_Responsaveis_id_responsavel"))
+    private String responsavel;
 
     public Movimentos() {
     }
 
-    public Movimentos(Long idMovimentos, Date data, boolean entradaSaida, Item item, Usuario usuario,
-            Responsavel responsavel) {
-        this.idMovimentos = idMovimentos;
+    public Movimentos(Date data, boolean entradaSaida, String item, String responsavel, String usuario) {
         this.data = data;
         this.entradaSaida = entradaSaida;
         this.item = item;
-        this.usuario = usuario;
         this.responsavel = responsavel;
+        this.usuario = usuario;
     }
+
 
     public Long getIdMovimentos() {
         return idMovimentos;
@@ -67,23 +67,27 @@ public class Movimentos {
         this.entradaSaida = entradaSaida;
     }
 
-    public Item getItem() {
+    public String getItem() {
         return item;
     }
 
-    public void setItem(Item item) {
+    public void setItem(String item) {
         this.item = item;
     }
 
-    public Usuario getUsuario() {
-        return usuario;
+    public String getUsuario() {
+    return usuario;
     }
 
-    public void setResponsavel(Responsavel responsavel) {
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+
+    public void setResponsavel(String responsavel) {
         this.responsavel = responsavel;
     }
 
-    public Responsavel getResponsavel() {
+    public String getResponsavel() {
         return responsavel;
     }
 }
