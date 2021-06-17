@@ -16,6 +16,9 @@ public class Item {
 
     public Item() {
     }
+    public Item(int idItem) {
+        this.idItem = idItem;
+    }
 
     public Item(String nomeItem, String codigo) {
         this.nomeItem = nomeItem;

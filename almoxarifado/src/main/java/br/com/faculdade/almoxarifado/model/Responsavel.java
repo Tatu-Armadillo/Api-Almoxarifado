@@ -20,6 +20,10 @@ public class Responsavel {
     public Responsavel() {
     }
 
+    public Responsavel(int idResponsavel) {
+        this.idResponsavel = idResponsavel;
+    }
+
     public Responsavel(String nomeResponsavel, String numeroContato) {
         this.nomeResponsavel = nomeResponsavel;
         this.numeroContato = numeroContato;
