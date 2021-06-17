@@ -9,7 +9,7 @@ public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_item")
-    private Long idItem;
+    private int idItem;
 
     private String nomeItem;
     private String codigo;
@@ -22,11 +22,11 @@ public class Item {
         this.codigo = codigo;
     }
 
-    public Long getIdItem() {
+    public int getIdItem() {
         return idItem;
     }
 
-    public void setIdItem(Long idItem) {
+    public void setIdItem(int idItem) {
         this.idItem = idItem;
     }
 

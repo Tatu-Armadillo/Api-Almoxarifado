@@ -9,7 +9,7 @@ public class Responsavel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_responsavel")
-    private Long idResponsavel;
+    private int idResponsavel;
 
     @Column(name = "Nome")
     private String nomeResponsavel;
@@ -25,11 +25,11 @@ public class Responsavel {
         this.numeroContato = numeroContato;
     }
 
-    public Long getIdResponsavel() {
+    public int getIdResponsavel() {
         return idResponsavel;
     }
 
-    public void setIdResponsavel(Long idResponsavel) {
+    public void setIdResponsavel(int idResponsavel) {
         this.idResponsavel = idResponsavel;
     }
 

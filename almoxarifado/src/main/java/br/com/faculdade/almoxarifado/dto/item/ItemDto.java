@@ -6,7 +6,7 @@ import br.com.faculdade.almoxarifado.model.Item;
 
 public class ItemDto {
 
-    private Long idItem;
+    private int idItem;
     private String codigo;
     private String nomeItem;
 
@@ -16,7 +16,7 @@ public class ItemDto {
         this.nomeItem = item.getNomeItem();
     }
 
-    public Long getIdItem() {
+    public int getIdItem() {
         return idItem;
     }
 

@@ -6,7 +6,7 @@ import br.com.faculdade.almoxarifado.model.Responsavel;
 
 public class ResponsavelDto {
 
-    private Long idResponsavel;
+    private int idResponsavel;
     private String nomeResponsavel;
     private String numeroContato;
 
@@ -16,7 +16,7 @@ public class ResponsavelDto {
         this.numeroContato = responsavel.getNumeroContato();
     }
 
-    public Long getIdResponsavel() {
+    public int getIdResponsavel() {
         return idResponsavel;
     }
 

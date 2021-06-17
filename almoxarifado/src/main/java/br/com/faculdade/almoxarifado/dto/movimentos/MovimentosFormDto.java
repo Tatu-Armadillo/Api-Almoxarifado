@@ -2,6 +2,7 @@ package br.com.faculdade.almoxarifado.dto.movimentos;
 
 import java.util.Date;
 
+import br.com.faculdade.almoxarifado.model.*;
 import br.com.faculdade.almoxarifado.model.Movimentos;
 import br.com.faculdade.almoxarifado.repository.MovimentosRepository;
 
@@ -9,9 +10,8 @@ public class MovimentosFormDto {
 
     private Date data;
     private boolean entradaSaida;
-    private String item;
-    private String responsavel;
-    private String usuario;
+    private Item item;
+    private Responsavel responsavel;
 
     public Date getData() {
         return data;
@@ -21,19 +21,19 @@ public class MovimentosFormDto {
         this.data = data;
     }
 
-    public String getResponsavel() {
+    public Responsavel getResponsavel() {
         return responsavel;
     }
 
-    public void setResponsavel(String responsavel) {
+    public void setResponsavel(Responsavel responsavel) {
         this.responsavel = responsavel;
     }
 
-    public String getItem() {
+    public Item getItem() {
         return item;
     }
 
-    public void setItem(String nomeItem) {
+    public void setItem(Item nomeItem) {
         this.item = nomeItem;
     }
 
@@ -45,15 +45,8 @@ public class MovimentosFormDto {
         this.entradaSaida = entradaSaida;
     }
 
-    public String getUsuario() {
-        return usuario;
-    }
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
-    }
-
     public Movimentos converter(MovimentosRepository movimentosRepository) {
-        return new Movimentos(data, entradaSaida, item, responsavel, usuario);
+        return new Movimentos(data, entradaSaida, item, responsavel);
     }
 
     public Movimentos atualizarResponsavel(Long id, MovimentosRepository responsavelRespository) {{
@@ -62,7 +55,6 @@ public class MovimentosFormDto {
         movimento.setEntradaSaida(this.entradaSaida);
         movimento.setItem(this.item);
         movimento.setResponsavel(this.responsavel);
-        movimento.setUsuario(this.usuario);
         return movimento;
     }}
 }

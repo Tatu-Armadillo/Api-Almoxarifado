@@ -8,46 +8,40 @@ import javax.persistence.*;
 @Table(name = "tb_movimentos")
 public class Movimentos {
 
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_movimentos")
-    private Long idMovimentos;
+    private int idMovimentos;
 
     private Date data;
 
     @Column(name = "Entrada_Saida")
     private boolean entradaSaida;
 
-    // @ManyToOne
-    // @JoinColumn(name = "tb_itens", foreignKey = @ForeignKey(name = "fk_Itens_id_item"))
-    private String item;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "fk_Itens_id_item", referencedColumnName = "id_item")
+    private Item item;
 
-    // @ManyToOne
-    // @JoinColumn(name = "id_adm", foreignKey = @ForeignKey(name =
-    // "fk_Usuarios_id_adm"))
-    private String usuario;
-
-    // @ManyToOne
-    // @JoinColumn(name = "id_responsavel", foreignKey = @ForeignKey(name = "fk_Responsaveis_id_responsavel"))
-    private String responsavel;
+    @ManyToOne
+    @JoinColumn(name = "fk_Responsaveis_id_responsavel", referencedColumnName = "id_responsavel")
+    private Responsavel responsavel;
 
     public Movimentos() {
     }
 
-    public Movimentos(Date data, boolean entradaSaida, String item, String responsavel, String usuario) {
+    public Movimentos(Date data, boolean entradaSaida, Item item, Responsavel responsavel) {
         this.data = data;
         this.entradaSaida = entradaSaida;
         this.item = item;
         this.responsavel = responsavel;
-        this.usuario = usuario;
     }
 
-
-    public Long getIdMovimentos() {
+    public int getIdMovimentos() {
         return idMovimentos;
     }
 
-    public void setIdMovimentos(Long idMovimentos) {
+    public void setIdMovimentos(int idMovimentos) {
         this.idMovimentos = idMovimentos;
     }
 
@@ -67,27 +61,19 @@ public class Movimentos {
         this.entradaSaida = entradaSaida;
     }
 
-    public String getItem() {
+    public Item getItem() {
         return item;
     }
 
-    public void setItem(String item) {
+    public void setItem(Item item) {
         this.item = item;
     }
 
-    public String getUsuario() {
-    return usuario;
-    }
-
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
-    }
-
-    public void setResponsavel(String responsavel) {
+    public void setResponsavel(Responsavel responsavel) {
         this.responsavel = responsavel;
     }
 
-    public String getResponsavel() {
+    public Responsavel getResponsavel() {
         return responsavel;
     }
 }
