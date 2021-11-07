@@ -1,59 +1,59 @@
-create DATABASE Almoxarifado;
+create database almoxarifado;
 
-use Almoxarifado;
+use almoxarifado;
 
--- CREATE TABLE tb_usuarios (
---     id_usuario long auto_increment PRIMARY KEY,
---     Login Varchar(20),
---     Senha Varchar(200),
---     UNIQUE (id_usuario, Login)
+-- create table tb_usuarios (
+--     id_usuario bigint auto_increment primary key,
+--     login varchar(20),
+--     senha varchar(200),
+--     unique (id_usuario, login)
 -- );
 
 -- create table tb_usuarios_perfis (
--- 	id_usuarios_perfis long auto_increment PRIMARY KEY,
+-- 	id_usuarios_perfis bigint auto_increment primary key,
 --     nome varchar(50)
 -- );
 
-CREATE TABLE tb_itens (
-    id_item long auto_increment PRIMARY KEY,
-    Nome_Item Varchar(20),
-    Codigo Varchar(10),
-    UNIQUE (id_item, Codigo)
+create table tb_itens (
+    id_item bigint auto_increment primary key,
+    nome_item varchar(20),
+    codigo varchar(10),
+    unique (id_item, codigo)
 );
 
-CREATE TABLE tb_responsaveis (
-    id_responsavel long auto_increment PRIMARY KEY UNIQUE,
-    Nome Varchar(50),
-    Numero_Contato Varchar(10)
+create table tb_responsaveis (
+    id_responsavel bigint auto_increment primary key unique,
+    nome varchar(50),
+    numero_contato varchar(10)
 );
 
-CREATE TABLE tb_movimentos (
-    id_movimentos long auto_increment PRIMARY KEY,
-    Data DateTime,
-    Entrada_Saida BIT,
-    fk_Itens_id_item long,
-    fk_Responsaveis_id_responsavel long
-    -- fk_Usuarios_id_usuario long,
+create table tb_movimentos (
+    id_movimentos bigint auto_increment primary key,
+    data datetime,
+    entrada_saida bit,
+    fk_itens_id_item bigint,
+    fk_responsaveis_id_responsavel bigint
+    -- fk_usuarios_id_usuario bigint,
 );
 
 -- create table tb_perfil (
--- 	id_perfil long auto_increment PRIMARY KEY,
+-- 	id_perfil bigint auto_increment primary key,
 --     nome varchar(50)
 -- );
  
-ALTER TABLE tb_movimentos ADD CONSTRAlong FK_Movimentos_2
-    FOREIGN KEY (fk_Itens_id_item)
-    REFERENCES tb_itens (id_item)
-    ON DELETE RESTRICT;
+alter table tb_movimentos add constraint fk_movimentos_2
+    foreign key (fk_itens_id_item)
+    references tb_itens (id_item)
+    on delete restrict;
     
-ALTER TABLE tb_movimentos ADD CONSTRAlong FK_Movimentos_4
-    FOREIGN KEY (fk_Responsaveis_id_responsavel)
-    REFERENCES tb_responsaveis (id_responsavel)
-    ON DELETE RESTRICT;
+alter table tb_movimentos add constraint fk_movimentos_4
+    foreign key (fk_responsaveis_id_responsavel)
+    references tb_responsaveis (id_responsavel)
+    on delete restrict;
  
--- ALTER TABLE tb_movimentos ADD CONSTRAlong FK_Movimentos_3
---     FOREIGN KEY (fk_Usuarios_id_usuario)
---     REFERENCES tb_usuarios (id_usuario)
---     ON DELETE RESTRICT;
+-- alter table tb_movimentos add constraint fk_movimentos_3
+--     foreign key (fk_usuarios_id_usuario)
+--     references tb_usuarios (id_usuario)
+--     on delete restrict;
  
     

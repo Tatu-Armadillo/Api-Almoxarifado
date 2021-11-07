@@ -5,8 +5,7 @@ import org.springframework.data.domain.Page;
 import br.com.faculdade.almoxarifado.model.Item;
 
 public class ItemDto {
-
-    private int idItem;
+    private Long idItem;
     private String codigo;
     private String nomeItem;
 
@@ -16,7 +15,7 @@ public class ItemDto {
         this.nomeItem = item.getNomeItem();
     }
 
-    public int getIdItem() {
+    public Long getIdItem() {
         return idItem;
     }
 

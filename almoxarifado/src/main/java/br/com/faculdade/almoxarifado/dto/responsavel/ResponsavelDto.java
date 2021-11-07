@@ -5,8 +5,7 @@ import org.springframework.data.domain.Page;
 import br.com.faculdade.almoxarifado.model.Responsavel;
 
 public class ResponsavelDto {
-
-    private int idResponsavel;
+    private Long idResponsavel;
     private String nomeResponsavel;
     private String numeroContato;
 
@@ -16,7 +15,7 @@ public class ResponsavelDto {
         this.numeroContato = responsavel.getNumeroContato();
     }
 
-    public int getIdResponsavel() {
+    public Long getIdResponsavel() {
         return idResponsavel;
     }
 

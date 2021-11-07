@@ -5,11 +5,10 @@ import javax.persistence.*;
 @Entity
 @Table(name = "tb_responsaveis")
 public class Responsavel {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_responsavel")
-    private int idResponsavel;
+    private Long idResponsavel;
 
     @Column(name = "Nome")
     private String nomeResponsavel;
@@ -20,7 +19,7 @@ public class Responsavel {
     public Responsavel() {
     }
 
-    public Responsavel(int idResponsavel) {
+    public Responsavel(Long idResponsavel) {
         this.idResponsavel = idResponsavel;
     }
 
@@ -29,11 +28,11 @@ public class Responsavel {
         this.numeroContato = numeroContato;
     }
 
-    public int getIdResponsavel() {
+    public Long getIdResponsavel() {
         return idResponsavel;
     }
 
-    public void setIdResponsavel(int idResponsavel) {
+    public void setIdResponsavel(Long idResponsavel) {
         this.idResponsavel = idResponsavel;
     }
 

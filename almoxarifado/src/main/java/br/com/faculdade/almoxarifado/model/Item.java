@@ -9,14 +9,14 @@ public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_item")
-    private int idItem;
+    private Long idItem;
 
     private String nomeItem;
     private String codigo;
 
-    public Item() {
-    }
-    public Item(int idItem) {
+    public Item() { }
+
+    public Item(Long idItem) {
         this.idItem = idItem;
     }
 
@@ -25,11 +25,11 @@ public class Item {
         this.codigo = codigo;
     }
 
-    public int getIdItem() {
+    public Long getIdItem() {
         return idItem;
     }
 
-    public void setIdItem(int idItem) {
+    public void setIdItem(Long idItem) {
         this.idItem = idItem;
     }
 

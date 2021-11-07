@@ -6,13 +6,11 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "tb_movimentos")
-public class Movimentos {
-
-    
+public class Movimentos {    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_movimentos")
-    private int idMovimentos;
+    private Long idMovimentos;
 
     private Date data;
 
@@ -37,11 +35,11 @@ public class Movimentos {
         this.responsavel = responsavel;
     }
 
-    public int getIdMovimentos() {
+    public Long getIdMovimentos() {
         return idMovimentos;
     }
 
-    public void setIdMovimentos(int idMovimentos) {
+    public void setIdMovimentos(Long idMovimentos) {
         this.idMovimentos = idMovimentos;
     }
 
